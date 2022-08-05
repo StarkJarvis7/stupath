@@ -1,0 +1,52 @@
+<%- include('partials/header'); %>
+
+<div class="bg-dark" style="width: 100%; height: 200px" >
+    <div class="container">
+        <div class="container pt-5">
+            <h1 class="" style="font-size: 4rem;"> <%= expertData.name.toUpperCase() %> </h1>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <div class="container p-3 m-3">
+                    <div class="container pt-5">
+                        <p> <%= expertData.description %> </p>
+                    </div>
+                    <div class="pt-3">
+                        <ul>
+                            <li>Mode Available : <%= expertData.mode%></li>
+                            <li>Charges : <%= expertData.charges%>/-</li>
+                            <li>Location : <%= expertData.city%>, <%= expertData.state%> </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pt-5 container px-5">
+                    <div class="row">
+                            <div class="col-6"><a href="tel:<%=expertData.phone%>" class="btn btn-success d-block" ">phno </a> </div>
+                            <div class="col-6"><a href="mailto:<%=expertData.email%>" class="btn btn-success d-block" ">Email</a></div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="p-5">
+                    <img src="data:image/<%=expertData.img.contentType%>;base64,<%=expertData.img.data.toString('base64')%>" style="height: 330px;" class="img-fluid rounded-start img-thumbnail"
+                                alt="<%= expertData.name %>">
+                                <div class="pt-3">
+                                    <strong> Experience : </strong> <span> <%= expertData.experience %> </span> <br>
+                                    <strong> Expert in : </strong>  <span> <%= expertData.expertIn %> </span>
+                                </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/footer'); %>

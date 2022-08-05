@@ -1,0 +1,18 @@
+<%- include('partials/header'); %>
+<div class="row pt-2">
+    <div class="col-12 col-md-3 ">
+        <%- include('partials/adminPannel/adminNav'); %>
+    </div>
+    <div class="col-12 col-md-9 ">
+        <h1 class="text-center">ADD COLLEGE</h1>
+        <% if (formStage == 1) {%>
+            <%- include('partials/adminPannel/addCollege'); %>
+        <% } else if (formStage == 2) {%>
+            <%- include('partials/adminPannel/addCollege2'); %>
+        <% } else if (formStage == 3) {%>
+            <!-- <%- include('partials/adminPannel/addCollege3'); %> -->
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer'); %>

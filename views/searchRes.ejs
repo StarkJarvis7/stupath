@@ -1,0 +1,60 @@
+<%- include('partials/header'); %>
+
+    <div class="container">
+        <div class="container">
+            <h2>search element : ""</h2>
+            <hr>
+            <br>
+            <div>
+                <h2> Colleges </h2>
+                <hr>
+                <div class="row">
+                    <% clgsData.forEach(function(clg){ %>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="/images/colleges/1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= clg.collegeName %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= clg.collegeDiscription.substring(0, 100) %>
+                                    </p>
+                                    <a href="/college/<%=clg.collegeName%>" class="btn btn-primary d-block">view
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+            
+            <div>
+                <h2> Career Guidence Experts </h2> <hr>
+                <div class="row">
+                <% data.forEach(function(expert){ %>
+                <div class="col-6">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="/images/c-g-Experts/1.jpg" style="height: 200px;" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"><%= expert.name %></h5>
+                              <p class="card-text"><%= expert.description.substring(0, 100) %></p>
+                              <div class="row">
+                                <div class="col-6"><a href="tel:<%=expert.phone%>" class="btn btn-success d-block" ">phno </a> </div>
+                                <div class="col-6"><a href="mailto:<%=expert.email%>" class="btn btn-success d-block" ">Email</a></div>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer'); %>

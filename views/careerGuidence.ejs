@@ -1,0 +1,66 @@
+<%- include('partials/header'); %>
+
+    <div class="" id="AllCollegeHero" style="height: 250px">
+        <div class="container pt-5">
+            <h1 class="text-center pt-5 " style="color: black;">Search here for the Expert</h1>
+            <!-- search bar using bootstrap -->
+            <div class="container ">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-8 col-12">
+                        <form action="" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for..." name="search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <% data.forEach(function(expert){ %>
+
+            <div class="p-4 mt-3 ">
+                <div class="card ">
+                    <section class="row">
+                        <div class="col-md-4">
+                            <img src="data:image/<%=expert.img.contentType%>;base64,<%=expert.img.data.toString('base64')%>" style="height: 245px;" class="img-fluid rounded-start"
+                                alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="row">
+                                    <h5 class="card-title"><%= expert.name.toUpperCase() %></h5>
+                                    <div class="col-md-8 col-12">
+                                        <p class="card-text"><%= expert.description.substring(0, 80) %></p>
+                                            
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-12 pt-5 border-dark border-start">
+                                        <strong><span>Experience : <%=expert.experience%></span></strong><br>
+                                        <strong><span>Expert in : <%=expert.expertIn%></span></strong><br>
+                                    </div>
+
+                                    <div class="col-12 col-md-8">
+                                        <div class="row">
+                                            <div class="col-6"><a href="tel:<%=expert.phone%>" class="btn btn-success d-block" ">phno </a> </div>
+                                            <div class="col-6"><a href="mailto:<%=expert.email%>" class="btn btn-success d-block" ">Email</a></div>
+                                        </div>
+                                        <div class="pt-2"><a href="/c-g-expert/<%=expert.name%>" class="btn btn-success d-block" ">View More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <%- include('partials/footer'); %>

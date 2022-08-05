@@ -1,0 +1,30 @@
+
+
+.discussions{
+margin-top: 5px;
+margin-left: 10px;
+margin-right: 50px;
+margin-bottom: 5px;
+align-content: center;
+border-style: solid;
+border-width: 1px;
+}
+.discussions > .discussionForum{
+  align-items: center;
+  text-align: center;
+  color: #00c200;
+}
+.posttitle{
+  font-weight: bold;
+  color: #00c200;
+}
+.postdesc{
+  font-family: 'Times New Roman', Times, serif;
+}
+.comments{
+  margin-left: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.commenter{
+  font-weight: bolder;
+}

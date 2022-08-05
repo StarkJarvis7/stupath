@@ -1,0 +1,3 @@
+=========================================== ADMIN DETAILS ===========================================
+mail : stupath@hyperdevelopers.in
+PSWD : stupathAdmin

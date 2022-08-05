@@ -1,0 +1,70 @@
+<div class="container">
+    <!-- form to collect college details -->
+    <form  enctype="multipart/form-data" novalidate="" action="/addCollegeDetailes1" method="POST" class="pt-5">
+        <div class="form-group p-2">
+            <label for="collegeName">College Name</label>
+            <input type="text" class="form-control" id="collegeName" value="" name="collegeName" placeholder="Enter College Name" required>
+        </div>
+        <div class="form-group p-2">
+            <label for="collegeAddress">College Address</label>
+            <input type="text" class="form-control" id="collegeAddress" name="collegeAddress" placeholder="Enter College Address" required>
+        </div>
+        <div class="row p-2">
+            <div class="form-group col-4">
+                <label for="collegeCity">College City</label>
+                <input type="text" class="form-control" id="collegeCity" name="collegeCity" placeholder="Enter College City" required>
+            </div>
+            <div class="form-group col-4">
+                <label for="collegeState">College State</label>
+                <input type="text" class="form-control" id="collegeState" name="collegeState" placeholder="Enter College State" required>
+            </div>
+            <div class="form-group col-4">
+                <label for="collegePincode">College Pincode</label>
+                <input type="text" class="form-control" id="collegePincode" name="collegePincode" placeholder="Enter College Pincode" required>
+            </div>
+        </div>
+        <div class="form-group p-2">
+            <label for="collegeDiscription">College Discription</label>
+            <textarea class="form-control" id="collegeDiscription" name="collegeDiscription" rows="3" required></textarea>
+        </div>
+         <!-- add college NAAC and NIRF ranking inputs here -->
+         <div class="row p-2">
+            <div class="form-group col-4">
+                <label for="collegeNAAC">College NAAC Ranking</label>
+                <input type="text" class="form-control" id="collegeNAAC" name="collegeNAAC" placeholder="Enter College NAAC Ranking" required>
+            </div>
+            <div class="form-group col-4">
+                <label for="collegeNIRF">College NIRF Ranking</label>
+                <input type="text" class="form-control" id="collegeNIRF" name="collegeNIRF" placeholder="Enter College NIRF Ranking" required>
+            </div>
+            <div class="form-group col-4">
+                <label for="collegeWeb">College website</label>
+                <input type="text" class="form-control" id="collegeWeb" name="collegeWeb" placeholder="Enter College website" required>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="form-group col-4">
+                <label for="collegeCTC">College Highest CTC</label>
+                <input type="text" class="form-control" id="collegeCTC" name="collegeCTC" placeholder="eg : 35 LPA" required>
+            </div>
+            <div class="form-group col-4">
+                <label for="collegeRC">NO of Recruting Companies</label>
+                <input type="text" class="form-control" id="collegeRC" name="collegeRC" placeholder="eg : 100+ " required>
+            </div>
+            <div class="form-group col-4">
+                <label for="collegeCode">College Code</label>
+                <input type="text" class="form-control" id="collegeCode" name="collegeCode" placeholder="eg : SREC " required>
+            </div>
+        </div>
+        <div class="form-group p-2">
+            <label for="collegeImage">College Image (5800Px(width) X 1971Px(height) )</label>
+            <input type="file" class="form-control-file" id="collegeImage" name="collegeImage" required>
+        </div>
+
+        
+       
+        <button type="submit" class="btn btn-success w-100">Submit and move Next</button>
+    </form>
+    <!-- show the stages of form -->
+    
+</div>

@@ -1,0 +1,123 @@
+<%- include('partials/header'); %>
+
+ <div class="row pt-2">
+    <div class="col-12 col-md-3 ">
+        <%- include('partials/adminPannel/adminNav'); %>
+    </div>
+    <div class="col-12 col-md-9 ">
+        <div class="container">
+            <h1>Add C-G-Expert</h1>
+            <form enctype="multipart/form-data" novalidate="" action="/addPerson" method="post">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="phoneNo">Phone No</label>
+                            <input type="text" class="form-control" id="phoneNo" name="phoneNo" placeholder="Phone No" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="APhoneNo">Alternate Phone No</label>
+                            <input type="text" class="form-control" id="APhoneNo" name="APhoneNo" placeholder="Alternate Phone No" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="pinCode">PinCode</label>
+                            <input type="text" class="form-control" id="pinCode" name="pinCode" placeholder="PinCode" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="charges">Charges (in rs)</label>
+                            <input type="text" class="form-control" id="charges" name="charges" placeholder="Charges" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="mode">Mode of Consultent</label>
+                            <!-- dropdown -->
+                            <select class="form-control" id="mode" name="mode" required>
+                                <option value="online">Online</option>
+                                <option value="offline">Offline</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="Experience">Experience</label>
+                            <input type="text" class="form-control" id="Experience" name="experience" placeholder="Experience" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="mode">Expert In</label>
+                            <input type="text" class="form-control" id="ExpertIn" name="expertIn" placeholder="ExpertIn" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="mode">Image </label>
+                            <input type="file" class="form-control-file" id="CGImage" name="CGImage" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="discription">Discription</label>
+                        <textarea  class="form-control" id="discription" name="description" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success d-block w-100 mt-2">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+ </div>
+
+
+<%- include('partials/footer'); %>

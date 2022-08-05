@@ -1,0 +1,49 @@
+<%- include('partials/header'); %>
+
+
+<div class="" id="AllCollegeHero" style="height: 250px">
+    <div class="container pt-5">
+        <h1 class="text-center pt-5 " style="color: black;">Find your Dream University Here</h1>
+        <!-- search bar using bootstrap -->
+        <div class="container ">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-md-8">
+                    <form action="/clgSearch" method="post">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search with college name, place, rank..." name="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+    
+        <div class="row p-4 m-2">
+            <% clgsData.forEach(function(clg){ %>
+                <div class="col-md-4 pt-2">
+                    <div class="card"  style="height: 330px">
+                        <img src="data:image/<%=clg.img.contentType%>;base64,<%=clg.img.data.toString('base64')%>" class="card-img-top" alt="..." height="150px">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= clg.collegeName %></h5>
+                            <p class="card-text"><%= clg.collegeDiscription.substring(0, 100) %></p>
+                            <a href="/college/<%=clg.collegeName%>" class="btn btn-primary d-block" >view more</a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+            
+        </div>
+</div>
+
+
+<%- include('partials/footer'); %>

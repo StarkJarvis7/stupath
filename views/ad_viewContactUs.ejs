@@ -1,0 +1,39 @@
+<%- include('partials/header'); %>
+
+<div class="row pt-2">
+    <div class="col-12 col-md-3 ">
+        <%- include('partials/adminPannel/adminNav'); %>
+    </div>
+    <div class="col-12 col-md-9 ">
+        <div class="container">
+            <h1 class="text-center">ContactUS -- review</h1>
+            <div class="container">
+                <% contactUsData.forEach(function(contactUs){ %>
+                    <div class="row pt-3">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-2"><%= contactUs.name %> </div>
+                                        <div class="col-3"><%= contactUs.email %></div>
+                                        <div class="col-3"><%= contactUs.subject %></div>
+                                        <div class="col-3"><%= contactUs.message %></div>
+                                        <div class="col-1"><form action="/dltContactUs" method="post" style="display:inline">
+                                            <input type="hidden" value = "<%= contactUs._id%>" name = "dltContact">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               <%  }); %>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<%- include('partials/footer'); %>

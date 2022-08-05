@@ -1,0 +1,115 @@
+<%- include('partials/header'); %>
+
+
+
+    <!-- main hero section -->
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/mainHero/1.jpg" class="d-block w-100 h-50" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/mainHero/2.jpg" class="d-block w-100 h-50" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/mainHero/3.jpg" class="d-block w-100 h-50" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- catchy statement -->
+    <div class="catchy container pt-5 mt-5 pb-3 text-center">
+        <h1>Start your journey here</h1>
+        <div class="container">
+            
+        <%- include('partials/clgSearchBar'); %>
+        </div>
+    </div>
+
+    <!-- search bar -->
+
+
+    <!-- to three university cards display -->
+    <div class="container pt-5 mt-4">
+        <h1 class="text-center mb-5">Top Universities</h1>
+        <div class="row">
+            <% let c = 0 %>
+            <% clgsData.forEach(function(clg){ %>
+            <% if(c < 3){ %>
+                <div class="col-md-4 mt-2" >
+                    <div class="card" style="height: 330px">
+                        <img src="data:image/<%=clg.img.contentType%>;base64,<%=clg.img.data.toString('base64')%>" class="card-img-top" style="height: 150px;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= clg.collegeName %></h5>
+                            <p class="card-text"><%= clg.collegeDiscription.substring(0, 100) %></p>
+                            <a href="/college/<%=clg.collegeName%>" class="btn btn-primary d-block" >view more</a>
+                        </div>
+                    </div>
+                </div>
+            <% c++ %>
+            <% } %>
+            <% }); %>
+            
+        </div>
+    </div>
+
+    <!-- to three Career Guidence Experts cards display -->
+    <div class="container pt-5 mt-4">
+        <h1 class="text-center mb-5">Top Career Guidence Experts</h1>
+        <div class="container row" >
+            
+            <% let count = 0 %>
+            <% data.forEach(function(expert){ %>
+            <% if(count < 2){ %>
+            <div class="col-10" >
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4 " style="text-align: center;">
+                        <img src="data:image/<%=expert.img.contentType%>;base64,<%=expert.img.data.toString('base64')%>" style="height: 235px; " class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= expert.name.toUpperCase() %></h5>
+                          <p class="card-text"><%= expert.description.substring(0, 100) %></p>
+                          <div class="row">
+                            <div class="col-6"><a href="tel:<%=expert.phone%>" class="btn btn-success d-block" ">phno </a> </div>
+                            <div class="col-6"><a href="mailto:<%=expert.email%>" class="btn btn-success d-block" ">Email</a></div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="pt-2"><a href="/c-g-expert/<%=expert.name%>" class="btn btn-success d-block" ">View More</a></div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <% count++ %>
+            <% } %>
+            <% }); %>
+           
+        </div>
+    </div>
+
+<%- include('partials/footer'); %>
